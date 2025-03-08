@@ -1,0 +1,266 @@
+/* Retro Synthwave Theme */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'VCR OSD Mono', monospace; /* Retro font */
+  background: #1a0b2e; /* Deep purple base */
+  color: #ffeb3b; /* Neon yellow text */
+  overflow: hidden;
+  position: relative;
+}
+
+/* CRT Screen Effect Overlay */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Global Layout with Synthwave Grid Background */
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff007a, #00ddeb); /* Pink to cyan gradient */
+  position: relative;
+}
+
+/* Retro Grid Overlay */
+.app::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Neon Sidebar */
+.sidebar {
+  width: 280px;
+  background: rgba(26, 11, 46, 0.9); /* Dark purple with transparency */
+  padding: 30px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #ff007a; /* Neon pink border */
+  box-shadow: 0 0 20px rgba(255, 0, 122, 0.5);
+}
+
+.sidebar h2 {
+  font-size: 32px;
+  color: #00ddeb; /* Neon cyan */
+  text-shadow: 0 0 10px #00ddeb, 0 0 20px #00ddeb;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* Neon Navigation Links */
+.sidebar nav a {
+  display: block;
+  padding: 16px 24px;
+  margin: 10px 0;
+  color: #ffeb3b; /* Neon yellow */
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #ff007a; /* Neon pink border */
+  text-shadow: 0 0 5px #ff007a;
+}
+
+.sidebar nav a:hover {
+  background: #ff007a; /* Neon pink */
+  color: #1a0b2e; /* Dark purple text */
+  box-shadow: 0 0 15px #ff007a;
+  transform: scale(1.05);
+}
+
+.sidebar nav a.active {
+  background: #00ddeb; /* Neon cyan */
+  color: #1a0b2e;
+  border-left: 4px solid #ffeb3b; /* Neon yellow */
+}
+
+/* Content Area with Synthwave Vibes */
+.content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background: transparent;
+}
+
+.content h2 {
+  font-size: 36px;
+  color: #ffeb3b; /* Neon yellow */
+  text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+/* Neon Input Field */
+.content input {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ddeb; /* Neon cyan border */
+  border-radius: 4px;
+  margin-bottom: 30px;
+  color: #ffeb3b; /* Neon yellow text */
+  text-shadow: 0 0 5px #00ddeb;
+  transition: all 0.3s ease;
+}
+
+.content input:focus {
+  outline: none;
+  border-color: #ff007a; /* Neon pink */
+  box-shadow: 0 0 15px #ff007a;
+}
+
+/* Neon Song Grid */
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Retro Song Cards */
+.song-card {
+  background: rgba(26, 11, 46, 0.8);
+  border-radius: 8px;
+  padding: 20px;
+  border: 2px solid #00ddeb; /* Neon cyan border */
+  box-shadow: 0 0 20px rgba(0, 221, 235, 0.5);
+  transition: all 0.3s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(255, 0, 122, 0.7);
+  border-color: #ff007a; /* Neon pink on hover */
+}
+
+/* Neon Image Container */
+.song-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 2px solid #ff007a; /* Neon pink */
+  box-shadow: 0 0 15px rgba(255, 0, 122, 0.5);
+}
+
+/* Retro Text Styles */
+.song-card h3 {
+  font-size: 20px;
+  color: #00ddeb; /* Neon cyan */
+  text-shadow: 0 0 10px #00ddeb;
+  margin: 10px 0 6px;
+}
+
+.song-card p {
+  font-size: 14px;
+  color: #ffeb3b; /* Neon yellow */
+  text-shadow: 0 0 5px #ffeb3b;
+  margin: 0 0 12px;
+}
+
+/* Neon Buttons Container */
+.song-card-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Neon Button Styling */
+.song-card-buttons button {
+  background: #ff007a; /* Neon pink */
+  border: 2px solid #00ddeb; /* Neon cyan border */
+  padding: 10px;
+  border-radius: 4px;
+  color: #1a0b2e; /* Dark purple text/icon */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 10px #ff007a;
+}
+
+/* Neon Hover Effect */
+.song-card-buttons button:hover {
+  background: #00ddeb; /* Neon cyan */
+  border-color: #ff007a; /* Neon pink border */
+  box-shadow: 0 0 20px #00ddeb;
+  transform: scale(1.1);
+}
+
+/* Custom Audio Player with Retro Style */
+.custom-audio-player {
+  width: 100%;
+  margin: 15px 0;
+  filter: hue-rotate(300deg) brightness(1.2);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+    padding: 20px 15px;
+  }
+
+  .content {
+    padding: 25px;
+  }
+
+  .song-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  .sidebar nav a {
+    flex-shrink: 0;
+  }
+}
